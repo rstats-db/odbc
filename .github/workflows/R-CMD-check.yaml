@@ -61,13 +61,13 @@ jobs:
         run: |
           sudo apt-get install -y unixodbc-dev odbc-postgresql devscripts
 
-      - name: Install SQL Server Driver
-        run: |
-          curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
-          curl https://packages.microsoft.com/config/ubuntu/16.04/prod.list > /etc/apt/sources.list.d/mssql-release.list
-          apt-get update
-          ACCEPT_EULA=Y apt-get install -y msodbcsql17
-        shell: sudo bash {0}
+      #- name: Install SQL Server Driver
+        #run: |
+          #curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
+          #curl https://packages.microsoft.com/config/ubuntu/16.04/prod.list > /etc/apt/sources.list.d/mssql-release.list
+          #apt-get update
+          #ACCEPT_EULA=Y apt-get install -y msodbcsql17
+        #shell: sudo bash {0}
 
       - name: Install dependencies
         run: |
