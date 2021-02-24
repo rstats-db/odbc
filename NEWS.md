@@ -5,6 +5,8 @@
   Microsoft's ODBC driver, using parametrized queries. (@detule, #414)
 * Fixed null handling in SQL Server / Azure result sets retrieved with
   Microsoft's ODBC driver. (@detule, #408)
+* odbc now always converts the encoding of non-ASCII column names of the SQL results to UTF-8. (@shrektan, #430)
+* Fixed issue that odbc may throw errors with garbage letters when the encoding of client and db-server are different. (@shrektan, #432)
 
 # odbc 1.3.0
 
@@ -229,7 +231,7 @@
 
 * Fixes for the CRAN build machines
   - Do not force c++14 on windows
-  - Turn off database tests on CRAN, as I think they will be difficult 
+  - Turn off database tests on CRAN, as I think they will be difficult
     to debug even if databases are supported.
 
 * Added a `NEWS.md` file to track changes to the package.
